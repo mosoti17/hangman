@@ -16,11 +16,18 @@ public class App {
       String result ="";
       String[] resultSpit = randomWord.splitPickedWord(word);
       Console console = System.console();
+      Boolean fail=false;
+      int lifes=5;
       do {
         System.out.println(randomWord.output);
         System.out.println("Enter a letter");
         String character = console.readLine();
         result= randomWord.compareWords(resultSpit, character);
-      } while (!word.equals(result));
+        lifes=lifes-1;
+        if(lifes ==0){
+          fail =true;
+        }
+
+      } while (!word.equals(result)&& !fail);
     }
 }
