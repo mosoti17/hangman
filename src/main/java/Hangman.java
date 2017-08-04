@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 public class Hangman {
 
-
+  public String pickedWord;
+  public String output ="";
     public String computedWord(List<String> myWords) {
       Random newRandomWord= new Random();
       int indexOfWord = newRandomWord.nextInt(myWords.size());
@@ -13,7 +14,7 @@ public class Hangman {
     }
     public String wordLength(String pickedWord) {
 
-      String output = "";
+
       for (int i=0;i<pickedWord.length() ;i++ ) {
         output=output+"-";
       }
@@ -23,8 +24,27 @@ public class Hangman {
       String[] splitWord = pickedWord.split("");
       return splitWord;
     }
-    public String[] compareWords(String[] splitWord, String letter) {
-      String[]
+    public String compareWords(String[] splitWord, String character) {
+      StringBuilder theWord =new StringBuilder();
+
+      String[] splitOutput =output.split("");
+
+      for (int i=0;i<pickedWord.length() ;i++ ) {
+        if (splitOutput[i].equals("-")) {
+          if (splitWord[i].equals(character)) {
+            theWord.append(character);
+
+          }else{
+            theWord.append("-");
+          }
+
+        } else {
+          theWord.append(splitOutput[i]);
+        }
+
+      }
+      output = theWord.toString();
+      return output;
     }
 
 
