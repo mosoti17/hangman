@@ -23,6 +23,9 @@ public class Hangman {
       String[] splitWord = pickedWord.split("");
       return splitWord;
     }
+    public String[] compareWords(String[] splitWord, String letter) {
+      String[]
+    }
 
 
 }

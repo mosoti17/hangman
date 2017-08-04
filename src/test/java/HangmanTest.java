@@ -16,15 +16,15 @@ public class HangmanTest {
     assertTrue(computed,words.contains(computed));
   }
   @Test
-  public void checkIfLengthOfWord_3(){
+  public void checkIfLengthOfWord(){
   Hangman randomWord= new Hangman();
   String expected= "----";
     assertEquals(expected,randomWord.wordLength("home"));
 }
-@Test
-public void splitTheWordIntoAString(){
-Hangman randomWord= new Hangman();
-  String[] expected ={"o","n","e"};
-  assertEquals(expected,randomWord.splitPickedWord("one"));
-}
+  @Test
+  public void splitTheWordIntoAString(){
+  Hangman randomWord= new Hangman();
+    String[] expected ={"o","n","e"};
+    assertEquals(expected,randomWord.splitPickedWord("one"));
+  }
 }
