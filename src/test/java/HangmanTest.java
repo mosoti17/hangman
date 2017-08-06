@@ -27,4 +27,10 @@ public class HangmanTest {
     String[] expected ={"o","n","e"};
     assertEquals(expected,randomWord.splitPickedWord("one"));
   }
+  @Test
+  public void checkWheterTheLetterEnteredIsPartOfTheWord(){
+  Hangman randomWord= new Hangman();
+    String[] expected ={"-","n","-"};
+    assertEquals(expected,randomWord.compareWords("n"));
+  }
 }

@@ -8,7 +8,7 @@
  import java.util.Arrays;
 public class App {
     public static void main(String[] args) {
-      List <String> words = Arrays.asList("one","house","car");
+      List <String> words = Arrays.asList("one","house","car","glucose");
       Hangman randomWord= new Hangman();
       String word =randomWord.computedWord(words);
       randomWord.pickedWord= word;
@@ -20,10 +20,15 @@ public class App {
       int lifes=5;
       do {
         System.out.println(randomWord.output);
+        System.out.println("You have "+lifes+" left");
         System.out.println("Enter a letter");
         String character = console.readLine();
         result= randomWord.compareWords(resultSpit, character);
-        lifes=lifes-1;
+        //if the word does not contain the entered character reduce lifes by one
+        if (!word.contains(character)) {
+          lifes=lifes-1;
+        }
+        //if the number oflifes reduces to 0 the game will end
         if(lifes ==0){
           fail =true;
         }
