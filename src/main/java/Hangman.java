@@ -4,8 +4,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 public class Hangman {
 
-  public String pickedWord;
-  public String output ="";
+  private String pickedWord;
+  private String output ="";
+
+      public void setPickedWord(String word){
+        pickedWord=word;
+      }
+
+      public void setOutput(String myOutput){
+        output=myOutput;
+      }
+
+      public String getPickedWord(){
+        return pickedWord;
+      }
+      
+      public String getOutput(){
+        return output;
+      }
+
     public String computedWord(List<String> myWords) {
       Random newRandomWord= new Random();
       int indexOfWord = newRandomWord.nextInt(myWords.size());

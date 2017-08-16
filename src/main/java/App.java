@@ -11,16 +11,16 @@ public class App {
       List <String> words = Arrays.asList("one","house","car","glucose");
       Hangman randomWord= new Hangman();
       String word =randomWord.computedWord(words);
-      randomWord.pickedWord= word;
-      randomWord.output=randomWord.wordLength(word);
+      randomWord.setPickedWord(word);
+      randomWord.setOutput(randomWord.wordLength(word));
       String result ="";
       String[] resultSpit = randomWord.splitPickedWord(word);
       Console console = System.console();
       Boolean fail=false;
       int lifes=5;
       do {
-        System.out.println(randomWord.output);
-        System.out.println("You have "+lifes+" left");
+        System.out.println(randomWord.getOutput());
+        System.out.println("You have "+lifes+" lifes left");
         System.out.println("Enter a letter");
         String character = console.readLine();
         result= randomWord.compareWords(resultSpit, character);
